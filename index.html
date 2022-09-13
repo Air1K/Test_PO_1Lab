@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="content">
+    <div class="a_and_b">
+        <div class="items1">
+            <div class="input1">
+                Введите первую границу интегралла (a) <label>
+                <input class="input_1" type="number">
+            </label>
+            </div>
+        </div>
+
+        <div class="items2">
+            <div class="input2">
+                <label>
+                    Введите вторую границу интегралла (b)
+                    <input class="input_2" type="number">
+                </label>
+            </div>
+        </div>
+        <button onclick="const F = main(parseFloat(document.querySelector('.input_1').value), parseFloat(document.querySelector('.input_2').value)); console.log(F)">
+            Найти интегралл
+        </button>
+    </div>
+    <div class="content_container">
+        <div class="content" style="max-height: 50%; overflow: auto; display: inline-block">
+            <table id="table_1">
+                <thead>
+                <tr>
+                    <th>Значения X</th>
+                    <th>Значения f(X)</th>
+                    <th>Значения f(X)*h</th>
+                    <th>Значения суммы f(X)*h</th>
+                </tr>
+                </thead> <!--ряд с ячейками заголовков-->
+
+                <!--        <tbody id="tbody">-->
+                <!--        </tbody>-->
+                <!--ряд с ячейками тела таблицы-->
+            </table>
+        </div>
+        <div id="content">
+<!--            <canvas id="myChart"></canvas>-->
+        </div>
+    </div>
+</div>
+<script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
