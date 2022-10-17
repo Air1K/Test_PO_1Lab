@@ -1,6 +1,15 @@
 function main (a, b){
     let x = 1;
     console.log(a, b);
+    if(a===0 || b===0){
+        return alert("X != 0")
+    }
+    else{
+        if(a > b || a===b){
+            console.log(a, b);
+            return alert("Введите в a левую границу, в b правую")
+        }
+    }
 
     let length_mass = (b-a) / x;
     console.log(length_mass)
@@ -10,10 +19,16 @@ function main (a, b){
         // = (Math.pow(x,2) - 0.25)/x;
     while (tr_fa){
         for(let i = a, l=0; i<b+x; l++, i += x){
-            F.push((Math.pow((i+(x/2)),2) - 0.25)/(i+(x/2)));
-            mass_X.push(i+(x/2));
+            if((i+(x/2)) === 0){
+                return alert("x = 0")
+            }
+            if((Math.pow((i+(x/2)),2) - 0.25) < 0){
+                return alert("Под корнем меньше 0")
+            }
+                F.push(Math.sqrt(Math.pow((i+(x/2)),2) - 0.25)/(i+(x/2)));
+                mass_X.push(i+(x/2));
         }
-        if(F[1]-F[0] < 0.01){
+        if(F[1]-F[0] < 0.01 && F[1] !== 0 && F[0] !== 0){
             tr_fa = false;
         }else {
             F = [];
